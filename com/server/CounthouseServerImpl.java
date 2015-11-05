@@ -7,6 +7,7 @@ import com.dto.Response;
 import com.command.CounthouseCommand;
 
 
+
 @WebService(endpointInterface="com.server.CounthouseServer")
 public class CounthouseServerImpl implements CounthouseServer {
 

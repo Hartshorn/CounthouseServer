@@ -44,6 +44,7 @@ public class CounthouseDatabase implements Database {
   / Create method - add new data items
   /
   */
+  @Override
   public boolean createDataItem(CounthouseDataItem newDataItem) {
       data.add(newDataItem);
       return writeItems();
@@ -54,6 +55,7 @@ public class CounthouseDatabase implements Database {
   / Read method - read data items (get an item) by ID
   /
   */
+  @Override
   public CounthouseDataItem readDataItem(Integer id) {
     for (CounthouseDataItem item : data) {
       if (item.getId() == id) {
@@ -68,6 +70,7 @@ public class CounthouseDatabase implements Database {
   / Update method - update data item given by ID
   /
   */
+  @Override
   public boolean updateDataItem(Integer id, CounthouseDataItem newDataItem) {
     data.forEach((item) -> {
       if (item.getId() == id && item.isActive()) {
@@ -82,6 +85,7 @@ public class CounthouseDatabase implements Database {
   / Delete method - remove data item by ID
   /
   */
+  @Override
   public boolean deleteDataItem(Integer id) {
     data.forEach((item) -> {
       if (item.getId() == id && item.isActive()) {
@@ -137,5 +141,9 @@ public class CounthouseDatabase implements Database {
       System.out.println(e.toString());
       return false;
     }
+  }
+
+  public List<CounthouseDataItem> getDataItems() {
+    return data;
   }
 }

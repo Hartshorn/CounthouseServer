@@ -3,7 +3,9 @@ package com.dto;
 
 public class Request {
 
-  private Integer requestCode;
+  public static enum Code { CREATE, READ, UPDATE, DELETE, DISPLAY }
+
+  private Code requestCode;
   private Integer id;
   private String name;
   private String city;
@@ -11,11 +13,11 @@ public class Request {
 
 
 
-  public Integer getRequestCode() {
+  public Code getRequestCode() {
     return this.requestCode;
   }
 
-  public void setRequestCode(Integer requestCode) {
+  public void setRequestCode(Code code) {
     this.requestCode = requestCode;
   }
 

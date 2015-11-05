@@ -3,16 +3,25 @@ package com.dto;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.database.CounthouseDataItem;
+
 
 public class Response {
+
+  public static enum Status { OK, ERROR }
 
   private Integer id;
   private String name;
   private String city;
   private String state;
-  private Integer status;
+  private Status status;
+  private List<CounthouseDataItem> items = new ArrayList<>();
   private List<String> errors = new ArrayList<>();
 
+
+  public Response() {
+    this.status = Status.OK;
+  }
 
   public Integer getId() {
     return this.id;
@@ -45,17 +54,21 @@ public class Response {
   public void setState(String state) {
     this.state = state;
   }
-  
-  public Response(Integer status) {
-    this.status = status;
-  }
 
-  public Integer getStatus() {
+  public Status getStatus() {
     return this.status;
   }
 
-  public void setStatus(Integer status) {
+  public void setStatus(Status status) {
     this.status = status;
+  }
+
+  public List<CounthouseDataItem> getItems() {
+    return this.items;
+  }
+
+  public void addItem(CounthouseDataItem item) {
+    this.items.add(item);
   }
 
   public List<String> getErrors() {
