@@ -1,0 +1,13 @@
+37,Jacks Tavern,Chicago,Illinois,false
+51,Jacks Tavern,Chicago,Illinois,true
+25,Jacks Tavern,Chicago,Illinois,false
+89,Jacks Tavern,Omaha,NE,true
+60,Jacks Tavern,Chicago,Illinois,true
+99,Jacks Tavern,Chicago,Illinois,true
+55,Jacks Tavern,Chicago,Illinois,true
+20,Jacks Tavern,Chicago,Illinois,true
+19,Jacks Tavern,Chicago,Illinois,true
+60,Jacks Tavern,Chicago,Illinois,true
+56,Jacks Tavern,Chicago,Illinois,true
+20,Jacks Tavern,Chicago,Illinois,true
+95,Jacks Tavern,Chicago,Illinois,true

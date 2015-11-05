@@ -18,7 +18,7 @@ public class Request {
   }
 
   public void setRequestCode(Code code) {
-    this.requestCode = requestCode;
+    this.requestCode = code;
   }
 
   public Integer getId() {

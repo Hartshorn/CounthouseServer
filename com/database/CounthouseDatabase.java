@@ -46,6 +46,8 @@ public class CounthouseDatabase implements Database {
   */
   @Override
   public boolean createDataItem(CounthouseDataItem newDataItem) {
+
+      //TODO: wrap this in a method to check for duplicate id's
       data.add(newDataItem);
       return writeItems();
   }
@@ -74,7 +76,9 @@ public class CounthouseDatabase implements Database {
   public boolean updateDataItem(Integer id, CounthouseDataItem newDataItem) {
     data.forEach((item) -> {
       if (item.getId() == id && item.isActive()) {
-        item = newDataItem;
+        item.setName(newDataItem.getName());
+        item.setCity(newDataItem.getCity());
+        item.setState(newDataItem.getState());
       }
     });
     return writeItems();
