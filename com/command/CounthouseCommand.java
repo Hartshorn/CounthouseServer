@@ -1,16 +1,16 @@
 package com.command;
 
-import com.dto.Request;
-import com.dto.Request.Code;
-import com.dto.Response;
-import com.dto.Response.Status;
 import com.database.CounthouseDataItem;
 import com.database.CounthouseDatabase;
 
+import com.dto.Request;
+import com.dto.Response;
+import com.dto.Response.Status;
+
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class CounthouseCommand {
@@ -19,7 +19,11 @@ public class CounthouseCommand {
   private static Logger logger = Logger.getLogger(CounthouseCommand.class.getName());
   private static Random rng = new Random();
 
-  public Response processRequest(Request request) {
+    /**
+     * @param request
+     * @return
+     */
+    public Response processRequest(Request request) {
 
     Response response = new Response();
 
