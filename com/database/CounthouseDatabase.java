@@ -26,7 +26,7 @@ import java.io.IOException;
 public class CounthouseDatabase implements Database {
 
   private static final String DATABASE_FILE_PATH = "com/database/db.txt";
-  private final static Charset ENCODING = StandardCharsets.UTF_8;
+  private static final Charset ENCODING = StandardCharsets.UTF_8;
 
   /*
   /
@@ -38,13 +38,13 @@ public class CounthouseDatabase implements Database {
   }
 
   private static List<CounthouseDataItem> data = new ArrayList<>();
+  
 
-  /*
-  / PUBLIC
-  / Create method - add new data items
-  /
-  */
-  @Override
+    /**
+     * @param newDataItem
+     * @return
+     */
+    @Override
   public boolean createDataItem(CounthouseDataItem newDataItem) {
 
       //TODO: wrap this in a method to check for duplicate id's
@@ -52,12 +52,12 @@ public class CounthouseDatabase implements Database {
       return writeItems();
   }
 
-  /*
-  / PUBLIC
-  / Read method - read data items (get an item) by ID
-  /
-  */
-  @Override
+
+    /**
+     * @param id
+     * @return
+     */
+    @Override
   public CounthouseDataItem readDataItem(Integer id) {
     for (CounthouseDataItem item : data) {
       if (item.getId() == id) {
@@ -67,12 +67,13 @@ public class CounthouseDatabase implements Database {
     return null;
   }
 
-  /*
-  / PUBLIC
-  / Update method - update data item given by ID
-  /
-  */
-  @Override
+
+    /**
+     * @param id
+     * @param newDataItem
+     * @return
+     */
+    @Override
   public boolean updateDataItem(Integer id, CounthouseDataItem newDataItem) {
     data.forEach((item) -> {
       if (item.getId() == id && item.isActive()) {
@@ -84,12 +85,13 @@ public class CounthouseDatabase implements Database {
     return writeItems();
   }
 
-  /*
-  / PUBLIC
-  / Delete method - remove data item by ID
-  /
-  */
-  @Override
+
+
+    /**
+     * @param id
+     * @return
+     */
+    @Override
   public boolean deleteDataItem(Integer id) {
     data.forEach((item) -> {
       if (item.getId() == id && item.isActive()) {
@@ -147,7 +149,10 @@ public class CounthouseDatabase implements Database {
     }
   }
 
-  public List<CounthouseDataItem> getDataItems() {
+    /**
+     * @return
+     */
+    public List<CounthouseDataItem> getDataItems() {
     return data;
   }
 }
